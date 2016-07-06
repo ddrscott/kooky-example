@@ -22,5 +22,8 @@ module Kooky
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    
+    # Use a String so autoload Just Works(tm)
+    config.middleware.insert_after Rack::Lock, 'KookyHandler'
   end
 end

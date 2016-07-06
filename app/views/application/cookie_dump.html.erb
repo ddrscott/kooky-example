@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <h1>document.cookie</h1>
+    <pre>
+<script>
+document.write(document.cookie.split(";").join(";\n"));
+</script>
+    </pre>
+    <h1>request.cookies</h1>
+    <pre>
+    <%= JSON.pretty_generate request.cookies %>
+    </pre>
+    Rails sees cookie from Rack: <%= @rack_cookie %><br/>
+  </body>
+</html>
